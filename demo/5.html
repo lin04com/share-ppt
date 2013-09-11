@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>演示页面</title>
+	<style type="text/css">
+	  *{ margin:0; padding:0;}
+		#description { padding:15px;}
+		#error{ color: #f00; padding:15px;}
+	</style>
+</head>
+<body>
+
+	<div id="description">
+		<blockquote>
+		错误说明：
+			'Name' - > 错误类型
+			'Message' -> 具体报错信息
+		</blockquote>
+	</div>
+
+	<div id="error"></div>
+
+	<script type="text/javascript">
+		/**
+		 * IE : SCRIPT5009: “notExistsFunction”未定义 
+		 * Chrome : Uncaught ReferenceError: notExistsFunction is not defined 
+		 * FireFox : ReferenceError: notExistsFunction is not defined
+		*/
+
+		try{
+
+			//window.onload = function(){
+			  notExistsFunction();
+			//};
+
+		}catch(e){
+
+			var msg = '<strong>Name :</strong> ' + e.name + '<br/>' +
+								'<strong>Message :</strong> ' + e.message  + '<br/>'
+					;
+
+			document.getElementById('error').innerHTML = msg;
+
+		}
+	</script>
+
+</body>
+</html>

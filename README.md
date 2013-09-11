@@ -1,4 +1,6 @@
 share-ppt
 =========
 
-share something.
+## Javascript Error and Javascript Stanted Syntax
+
+
