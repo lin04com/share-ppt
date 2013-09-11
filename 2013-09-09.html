@@ -92,7 +92,10 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>拒绝访问。</li>
 <li>Permission denied to access property 'XXX'</li>
 </ul></li>
-<li>语法错误 <a href="demo/11.html">'return' 语句在函数之外</a></li>
+<li>语法错误
+<ul>
+<li><a href="demo/11.html">'return' 语句在函数之外</a></li>
+</ul></li>
 <li>加载异常</li>
 </ul>
 <h3 id="javascript错误监控机制后端工程师较前端工程师最大的便利之一就是良好的代码监控机制">Javascript错误监控机制(&quot;后端工程师较前端工程师最大的便利之一就是：良好的代码监控机制&quot;)</h3>
@@ -107,15 +110,15 @@ code > span.er { color: #ff0000; font-weight: bold; }
 </ul>
 <p><code>javascript(try - catch)  try {     M.unexistMethod(); } catch(ex) {     alert(ex.message);     // IE: &quot;Object does't support this property or method&quot;     // FF: &quot;M.unexistMethod is not a function&quot;     // Chrome: &quot;Object # has no method 'unexistMethod'&quot; }</code></p>
 <p><code>javascript(window - onerror) window.onerror = function(msg, url, line) {     alert(msg + ':' + line);     // IE:&quot;Object does't support this property or method:7&quot;     // FF:&quot;Script error.:0&quot;     // Chrome:&quot;Script error.:0&quot; }; M.unexistMethod();</code></p>
-<pre><code>  var a = {};
-  a.a();
-  
-  Browser Message
-  IE  对象不支持此属性或方法
-  Firefox a.a is not a function
-  Opera &#39;a.a&#39; is not a function
-  Safari  &#39;undefined&#39; is not a function
-  Chrome  Object # has no method &#39;a&#39;</code></pre>
+<pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> a = {};
+<span class="ot">a</span>.<span class="fu">a</span>();
+
+Browser Message
+IE  对象不支持此属性或方法
+Firefox <span class="ot">a</span>.<span class="fu">a</span> <span class="fu">is</span> <span class="fu">not</span> <span class="fu">a</span> <span class="fu">function</span>
+<span class="fu">Opera</span> <span class="st">&#39;a.a&#39;</span> is not a <span class="kw">function</span>
+Safari  <span class="st">&#39;undefined&#39;</span> is not a <span class="kw">function</span>
+Chrome  Object # has no method <span class="st">&#39;a&#39;</span></code></pre>
 <h3 id="pe统计及线上日常错误">PE统计及线上日常错误</h3>
 <ul>
 <li>线上日常错误
@@ -138,6 +141,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li><a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same_origin_policy</a></li>
 <li><a href="http://mxr.mozilla.org/mozilla-beta/source/dom/base/nsJSEnvironment.cpp#316">Firefox source that checks</a></li>
 <li><a href="http://trac.webkit.org/browser/branches/chromium/648/Source/WebCore/dom/ScriptExecutionContext.cpp?rev=77122#L301">WebKit source that checks origin</a></li>
+<li><a href="https://docs.google.com/document/pub?id=17ICSeE4Qd04-1U-pphmKCAmfgJGEVjqDellbu4oAiqU">豆瓣Javascript代码风格规范</a></li>
 </ul>
 </body>
 </html>
