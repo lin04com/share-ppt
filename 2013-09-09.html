@@ -50,10 +50,6 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <ol start="3" type="1">
 <li>总结</li>
 </ol>
-<ul>
-<li>注意代码规范，代码风格一致，方便维护</li>
-<li>使用工具及时检测发现错误</li>
-</ul>
 <h2 id="js错误处理">JS错误处理</h2>
 <h3 id="常见js错误">常见JS错误</h3>
 <ul>
@@ -108,7 +104,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <li>??</li>
 </ol></li>
 </ul>
-<p><code>javascript(try - catch)  try {     M.unexistMethod(); } catch(ex) {     alert(ex.message);     // IE: &quot;Object does't support this property or method&quot;     // FF: &quot;M.unexistMethod is not a function&quot;     // Chrome: &quot;Object # has no method 'unexistMethod'&quot; }</code></p>
+<p><code>javascript(try - catch) try {     M.unexistMethod(); } catch(ex) {     alert(ex.message);     // IE: &quot;Object does't support this property or method&quot;     // FF: &quot;M.unexistMethod is not a function&quot;     // Chrome: &quot;Object # has no method 'unexistMethod'&quot; }</code></p>
 <p><code>javascript(window - onerror) window.onerror = function(msg, url, line) {     alert(msg + ':' + line);     // IE:&quot;Object does't support this property or method:7&quot;     // FF:&quot;Script error.:0&quot;     // Chrome:&quot;Script error.:0&quot; }; M.unexistMethod();</code></p>
 <pre class="sourceCode javascript"><code class="sourceCode javascript"><span class="kw">var</span> a = {};
 <span class="ot">a</span>.<span class="fu">a</span>();
@@ -126,14 +122,53 @@ Chrome  Object # has no method <span class="st">&#39;a&#39;</span></code></pre>
 <li><img src="error/error.png" alt="线上JS错误趋势" /></li>
 <li>[线上错误类型][]</li>
 <li>常见错误类型整理</li>
+<li>例子及图片演示</li>
+<li>错误查找与处理方法</li>
+<li>地址栏 + '?debug=1'</li>
+<li>bip - hive查询</li>
 </ul></li>
 </ul>
 <pre class="sourceCode javascript"><code class="sourceCode javascript">  <span class="kw">var</span> jq = $ = <span class="fu">require</span>(<span class="st">&#39;jquery&#39;</span>); =&gt; $ 全局变量覆盖JUI，导致页面报错</code></pre>
 <h2 id="代码规范">代码规范</h2>
 <h3 id="为什么要规范代码">为什么要规范代码</h3>
+<ul>
+<li><p>糟糕例子 ··· javascript for (var i = 0; i &lt; 10; i += 1) alert(i);</p>
+<p>for (var i = 0; i &lt; 10; i += 1) alert(i); alert(i + &quot; is &quot; + (i % 2 ? &quot;odd&quot; : &quot;even&quot;));</p>
+if (true) alert(1); else alert(2); ···</li>
+<li>好的代码规范可以：
+<ol type="1">
+<li>统一编码风格，思路清晰，逻辑清楚</li>
+<li>方便阅读，易于维护</li>
+<li>减少代码中bug出现的可能性，因为程序员遇到各种情况时有标准可以简单的遵循，有现成的参考</li>
+</ol></li>
+</ul>
 <h3 id="规范好处">规范好处</h3>
-<h3 id="js代码规范及基本错误处理">JS代码规范及基本错误处理</h3>
+<ul>
+<li>代码规范，易读易懂</li>
+<li>方便维护，降低维护成本</li>
+<li>减少bug</li>
+<li>有助于代码评审(codereview)</li>
+</ul>
+<h3 id="js代码规范---借助工具jshintjshint">JS代码规范 - 借助工具<a href="http://www.jshint.com/">jsHint</a></h3>
+<ul>
+<li>缩进(一般4个空格，不要使用tab)</li>
+<li>每行长度(避免大于100个字符)</li>
+<li>行尾分号(;)</li>
+<li>注释(/**/)</li>
+<li>变量声明</li>
+<li>函数声明</li>
+<li>return语句</li>
+</ul>
+<h3 id="另外建议">另外建议</h3>
+<ol type="1">
+<li>Object - {} 和 Array - []</li>
+<li>=== 和 !==操作符</li>
+</ol>
 <h2 id="总结">总结</h2>
+<ul>
+<li>注意代码规范，代码风格一致，方便维护</li>
+<li>使用工具及时检测发现错误，减少bug</li>
+</ul>
 <h3 id="参考资料">参考资料</h3>
 <ul>
 <li><a href="https://gist.github.com/neekey/4371159">浏览器错误捕捉总结</a></li>
@@ -142,6 +177,9 @@ Chrome  Object # has no method <span class="st">&#39;a&#39;</span></code></pre>
 <li><a href="http://mxr.mozilla.org/mozilla-beta/source/dom/base/nsJSEnvironment.cpp#316">Firefox source that checks</a></li>
 <li><a href="http://trac.webkit.org/browser/branches/chromium/648/Source/WebCore/dom/ScriptExecutionContext.cpp?rev=77122#L301">WebKit source that checks origin</a></li>
 <li><a href="https://docs.google.com/document/pub?id=17ICSeE4Qd04-1U-pphmKCAmfgJGEVjqDellbu4oAiqU">豆瓣Javascript代码风格规范</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/web/1008_wangdd_jscodingrule/">JavaScript 编码规范建议</a></li>
+<li><a href="http://dancewithnet.com/snapshot/code-conventions-for-the-javascript-programming-language/">JavaScript程序编码规范</a></li>
+<li><a href="http://sharepoint/tech/webdivision/SitePages/Home.aspx">BIP参考</a></li>
 </ul>
 </body>
 </html>
